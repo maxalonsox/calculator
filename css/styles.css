@@ -130,3 +130,12 @@ body {
 .btn.double:hover {
     background-color: #fc367b;
 }
+
+.btn.disabled {
+    background-color: #000000a1;
+    cursor: not-allowed;
+}
+
+.btn.disabled:hover {
+    background-color: #000000a1;
+}

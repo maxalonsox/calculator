@@ -54,7 +54,6 @@ addOperator(addition)
 addOperator(substract)
 addOperator(multiplication)
 addOperator(division)
-addOperator(percentage)
 const operators = ['+','-','/','*','%']
 
 function addNumber(number) {
@@ -94,11 +93,14 @@ equal.addEventListener('click', (e) => {
     operation.innerHTML = result.innerHTML
     if ((result.innerHTML != '0') && (result.innerHTML != '')) {
         result.innerHTML = result.innerHTML.replace('π', Math.PI.toFixed(3))
-        let res = eval(result.innerHTML).toFixed(3)
-        result.innerHTML = res
+        if (result.innerHTML.includes('.')) {
+            result.innerHTML = eval(result.innerHTML).toFixed(3)
+        }
+        result.innerHTML = eval(result.innerHTML)
     }
 })
 
+console.log()
 
 
 
